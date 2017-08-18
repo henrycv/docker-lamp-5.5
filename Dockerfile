@@ -11,9 +11,6 @@ MAINTAINER Henry Carbajal <entidad.estelar@gmail.com>
 # # http://askubuntu.com/questions/506158/unable-to-initialize-frontend-dialog-when-using-ssh
 ENV DEBIAN_FRONTEND noninteractive
 
-COPY . /docker-lamp-5.5/
-WORKDIR /docker-lamp-5.5
-
 # Update sources and install packages
 RUN apt-get -y update && apt-get -y install \
     # Install Vim text editor
@@ -82,7 +79,6 @@ RUN curl -sS https://getcomposer.org/installer | php \
 # Install PHP Symfony framework tool globally
 RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 RUN chmod a+x /usr/local/bin/symfony
-
 
 ADD start.sh start.sh
 RUN chmod 777 start.sh
