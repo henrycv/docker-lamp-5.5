@@ -14,12 +14,11 @@ services:
             dockerfile: Dockerfile
         container_name: stack-lamp-5.5
         volumes:
-            - /var/www:/var/www
-            - ~/:/root/
-            - .:/almundo-lamp
+            - /var/www/html/:/var/www/html
+            - .:/stack-lamp-5.5
         ports:
         - "80:80"
-        # - "443:443"
+        - "443:443"
         expose:
         - "80"
-        # - "443"
+        - "443"
