@@ -65,6 +65,7 @@ RUN php5enmod mcrypt
 
 # Copy the customized Apache config on guest machine:
 COPY ./config/apache2.conf /etc/apache2/apache2.conf
+COPY ./config/ports.conf /etc/apache2/ports.conf
 
 # Copy the customized PHP development config on guest machine:
 COPY ./config/php.ini /etc/php5/apache2/php.ini
