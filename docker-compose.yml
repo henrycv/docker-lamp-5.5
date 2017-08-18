@@ -1,0 +1,25 @@
+##
+## Name: docker-lamp-vidriera
+## Dockerfile to build a LAMP and Node stack image
+## Author: https://about.me/henrycv
+##
+## MAINTAINER Henry Carbajal <entidad.estelar@gmail.com>
+##
+
+version: "3.1"
+services:
+    stack-lamp-5.5:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: stack-lamp-5.5
+        volumes:
+            - /var/www:/var/www
+            - ~/:/root/
+            - .:/almundo-lamp
+        ports:
+        - "80:80"
+        # - "443:443"
+        expose:
+        - "80"
+        # - "443"
