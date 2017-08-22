@@ -8,15 +8,15 @@
 
 version: "3.1"
 services:
-    stack-lamp-5.5:
+    docker-lamp-5.5:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: stack-lamp-5.5
-        working_dir: /stack-lamp-5.5
+        container_name: docker-lamp-5.5
+        working_dir: /docker-lamp-5.5
         volumes:
             - /var/www/html/:/var/www/html
-            - .:/stack-lamp-5.5
+            - .:/docker-lamp-5.5
         ports:
         - "80:80"
         - "443:443"

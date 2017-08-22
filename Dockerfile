@@ -59,6 +59,8 @@ RUN a2enmod rewrite
 # Enable module expires.
 RUN a2enmod file_cache
 RUN a2enmod expires
+RUN a2enmod headers
+RUN a2enmod ssl
 
 # Enable PHP Mcrypt extension
 RUN php5enmod mcrypt
