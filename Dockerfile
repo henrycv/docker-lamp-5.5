@@ -13,6 +13,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Update sources and install packages
 RUN apt-get -y update && apt-get -y install \
+    # Install Git CSV
+    git \
     # Install Vim text editor
     vim \
     # Install CURL tool
@@ -82,6 +84,12 @@ RUN curl -sS https://getcomposer.org/installer | php \
 # Install PHP Symfony framework tool globally
 RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 RUN chmod a+x /usr/local/bin/symfony
+
+# Install Grunt JS tool
+RUN npm install -g grunt grunt-cli
+
+# Create an alias "node" from "nodejs"
+RUN ln -fs /usr/bin/nodejs /usr/bin/node
 
 ADD start.sh start.sh
 RUN chmod 777 start.sh
